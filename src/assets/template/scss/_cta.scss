@@ -1,0 +1,337 @@
+.cta-discuss-wrapper {
+    background-color: #171717;
+    padding: 60px;
+    @include flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 9;
+    overflow: hidden;
+
+    @include breakpoint (max-lg){
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    @include breakpoint (max-sm){
+       padding: 30px;
+    }
+
+    .icon-items {
+        padding-left: 225px;
+        @include flex;
+        gap: 30px;
+
+        @include breakpoint (max-xl){
+           padding-left: 0;
+        }
+
+        @include breakpoint (max-lg){
+            flex-wrap: wrap;
+        }
+
+        .icon {
+            width: 95px;
+            height: 95px;
+            text-align: center;
+            line-height: 95px;
+            border-radius: 50%;
+            background-color: $white;
+
+            @include breakpoint (max-lg){
+                margin: 0 auto;
+            }
+        }
+
+        h2 {
+            font-size: 36px;
+            color: $white;
+        }
+    }
+
+    .theme-btn {
+
+        &::before,&::after {
+           background-color: $white;
+        }
+
+        &:hover {
+            color: $header-color;
+        }
+    }
+
+    .cta-thumb {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        margin: -3px;
+
+        @include breakpoint (max-xl){
+            display: none;
+        }
+
+        img {
+            @include imgw;
+        }
+    }
+}
+
+.cta-wrapper {
+    padding: 250px 0 120px;
+    position: relative;
+    background-attachment: fixed;
+    z-index: 9;
+    margin-top: -142px;
+    position: relative;
+    z-index: 9;
+    margin: -142px 100px 0;
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include breakpoint (max-xl){
+        margin-left: 0;
+        margin-right: 0;
+        padding-bottom: 100px;
+        padding-top: 230px;
+    }
+
+    @include breakpoint (max-lg){
+        padding-top: 210px;
+        padding-bottom: 80px;
+    }
+
+    // &::before {
+    //     @include before;
+    //     background-color: rgba(237, 59, 59,);
+    //     opacity: .8;
+    //     z-index: -1;
+    // }
+
+    .cta-content {
+        text-align: center;
+
+        h2 {
+            font-size: 60px;
+            color: $white;
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+
+        p {
+            font-size: 20px;
+            color: #ffc9c9;
+        }
+
+        .theme-btn {
+            background-color: $header-color;
+            margin-top: 50px;
+
+            &::before,&::after {
+                background-color: $white;
+            }
+
+            &:hover {
+                color: $header-color;
+            }
+        }
+    }
+}
+
+.cta-agency-content {
+    margin-bottom: 50px;
+
+    h2 {
+        font-size: 60px;
+
+        @include breakpoint (max-md){
+            font-size: 52px;
+        }
+
+        @include breakpoint (max-sm){
+            font-size: 40px;
+        }
+    }
+
+    .theme-btn {
+        background-color: $header-color;
+        margin-top: 50px;
+
+        @include breakpoint (max-sm){
+            margin-top: 30px;
+        }
+
+        &::before,&::after {
+            background-color: $white;
+        }
+
+        &:hover {
+            color: $header-color;
+        }
+    }
+}
+
+.cta-agency-section {
+    position: relative;
+    z-index: 9;
+
+    .cta-shape {
+        position: absolute;
+        top: -4px;
+        bottom: -2px;
+        left: 0;
+        z-index: -1;
+        width: 1310px;
+
+        @include breakpoint (max-xl){
+            display: none;
+        }
+
+        img {
+            @include imgw;
+        }
+    }
+
+    .shape-cicrle {
+        position: absolute;
+        top: 22%;
+        left: 55%;
+
+        @include breakpoint (max-xxl){
+            display: none;
+        }
+
+        .animation-circle {
+            animation: cir36 10s linear infinite;
+        }
+        
+        .icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+    }
+}
+
+.cta-wrapper-2 {
+    padding: 0 0 120px;
+    position: relative;
+    background-attachment: fixed;
+
+    &::before {
+        @include before;
+        background-color: #171717;
+        opacity: 0.7;
+
+    }
+
+    h2 {
+        font-size: 60px;
+        font-weight: 600;
+        color: $white;
+        position: relative;
+        text-align: center;
+
+        @include breakpoint (max-md){
+            font-size: 40px;
+        }
+
+        @include breakpoint (max-sm){
+            font-size: 32px;
+        }
+    }
+
+    .cta-button {
+        margin: 50px auto 0;
+        text-align: center;
+    }
+
+    .list-items {
+        @include flex;
+        position: relative;
+        justify-content: space-between;
+        background-color: $theme-color;
+        padding: 16px 35px;
+        margin-bottom: 102px;
+
+        @include breakpoint (max-xl4) {
+            padding: 16px 20px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .text-move {
+            font-size: 16px;
+            color: $white;
+            text-transform: uppercase;
+            letter-spacing: 3.6px;
+            font-weight: 500;
+        }
+    }
+}
+
+.cta-wrapper-3 {
+    text-align: center;
+
+    .circle-image {
+        margin-bottom: 20px;
+        position: relative;
+
+        .animation-circle {
+            animation: cir36 10s linear infinite;
+        }
+
+        .icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+    }
+
+    .cta-content {
+        position: relative;
+        
+        h2 {
+            font-size: 60px;
+            color: $white;
+            margin-bottom: 30px;
+
+            @include breakpoint (max-md){
+                font-size: 50px;
+            }
+
+            @include breakpoint (max-sm){
+                font-size: 40px;
+            }
+        }
+    }
+}
+
+.cta-bg-section-3 {
+    position: relative;
+    background-attachment: fixed;
+
+    // &::before {
+    //     @include before;
+    //     background: rgba(23, 23, 23, .5);
+    // }
+}
+
+.cta-section-2 {
+    position: relative;
+
+    &::before {
+        @include before;
+        background-color: #f4f4f4;
+        height: 50%;
+    }
+}
+
+.cta-agency-section {
+    background-attachment: fixed;
+}

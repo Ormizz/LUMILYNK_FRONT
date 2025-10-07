@@ -1,17 +1,52 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="fr">
   <head>
+    <!-- Encodage & responsive -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
+
+    <!-- Titre SEO -->
+    <title>LUMILYNK – Obtenez des bourses pour étudier en Inde facilement</title>
+
+    <!-- Meta description (150–160 caractères max) -->
+    <meta name="description" content="Lumilynk vous guide pour trouver et obtenir des bourses universitaires en Inde, avec des conseils pratiques pour réussir votre candidature.">
+
+    <!-- Robots + Canonical -->
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.lumilynk.com/">
+
+    <!-- Open Graph (Facebook, LinkedIn, WhatsApp, Discord) -->
+    <meta property="og:title" content="Lumilynk – Bourses universitaires en Inde pour étudiants">
+    <meta property="og:description" content="Découvrez Lumilynk, l’application qui vous aide à trouver et obtenir des bourses pour étudier dans les universités en Inde.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.lumilynk.com/">
+    <meta property="og:image" content="https://www.lumilynk.com/images/preview.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" href="<%= BASE_URL %>Favicon.png">
+
+    <!-- CSS / Tailwind -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
+
   <body>
     <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong>Lumilynk nécessite JavaScript pour fonctionner correctement. Veuillez l’activer.</strong>
     </noscript>
     <div id="app"></div>
-    <!-- built files will be auto injected -->
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/viewport.jquery.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <script src="assets/js/jquery.waypoints.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/jquery.meanmenu.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>

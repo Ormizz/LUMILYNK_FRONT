@@ -1,26 +1,36 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <router-view />
+    <NotificationSystem ref="notificationSystem" />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import NotificationSystem from './components/NotificationSystem.vue'
+import notificationService from './utils/notificationService'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    NotificationSystem
+  },
+  async mounted() {
+    // Attendre que le composant soit complètement monté
+    await this.$nextTick()
+    
+    // Initialiser le service de notification avec le composant
+    if (this.$refs.notificationSystem) {
+      notificationService.setNotificationComponent(this.$refs.notificationSystem)
+      console.log('Service de notification initialisé avec succès')
+    } else {
+      console.error('Composant NotificationSystem non trouvé')
+    }
+  },
+  updated() {
+    // Réinitialiser si nécessaire lors des mises à jour
+    if (this.$refs.notificationSystem && !notificationService.notificationComponent) {
+      notificationService.setNotificationComponent(this.$refs.notificationSystem)
+    }
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

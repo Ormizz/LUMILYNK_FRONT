@@ -1,0 +1,137 @@
+.brand-items {
+    margin-bottom: 60px;
+    margin-top: 60px;
+    padding-bottom: 60px;
+
+    .array-button {
+        margin-bottom: 40px;
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+           @include before;
+            height: 1px;
+            width: 44%;
+            top: 50%;
+            background: rgba(255,255,255,.2);
+        }
+
+        &::after {
+            position: absolute;
+            content: "";
+            width: 44%;
+            top: 50%;
+            height: 1px;
+            right: 0;
+            background: rgba(255,255,255,.2);
+        }
+    }
+
+    .brand-image {
+        min-height: 100px;
+        padding: 30px;
+        @include transition;
+
+        img {
+            opacity: .6;
+            @include transition;
+            display: inline-block;
+        }
+
+        &:hover {
+            background-color: $black;
+
+            img {
+                opacity: 1;
+            }
+        }
+    }
+
+    &.style-2 {
+        padding-bottom: 0;
+        margin-bottom: 0;
+        margin-top: 0;
+
+        .brand-image {
+            min-height: 100px;
+            padding: 30px;
+            @include transition;
+    
+            img {
+               // opacity: .6;
+                @include transition;
+                display: inline-block;
+            }
+    
+            &:hover {
+                background-color: #f4f4f4;
+    
+                img {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .swiper-slide.swiper-slide-active{
+            .brand-image {
+                background-color: #f4f4f4;
+        
+                img {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .swiper-slide.swiper-slide-active{
+        .brand-image {
+            background-color: $black;
+    
+            img {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.brand-wrapper {
+    padding: 90px 0 60px;
+
+    // .swiper-slide {
+    //     border-bottom: 2px solid $white;
+    //     padding-bottom: 80px;
+    // }
+     .brand-image {
+         text-align: center;
+         filter: grayscale(100%);
+         @include transition;
+         opacity: .4;
+ 
+         &:hover {
+             filter: initial;
+             opacity: 1;
+         }
+     }
+ 
+     .swiper-slide.swiper-slide-active{
+         .brand-image {
+             filter: initial;
+             opacity: 1;
+         }
+     }
+
+     .content {
+        border-top: 2px solid #e56060;
+        margin-top: 90px;
+        padding-top: 90px;
+        padding-bottom: 30px;
+
+        h2 {
+            color: $white;
+        }
+     }
+}
+
+.brand-section-3 {
+    background-position: bottom !important;
+}
