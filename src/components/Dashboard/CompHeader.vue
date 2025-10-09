@@ -2,9 +2,9 @@
     <nav class="shadow-md" style="background-color: var(--theme);">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="flex h-16 items-center justify-between">
-                <!-- Logo -->
+                <!-- Logo (caché sur mobile) -->
                 <div class="flex items-center">
-                    <div class="shrink-0">
+                    <div class="shrink-0 hidden md:block">
                         <img
                             class="h-10 w-10"
                             src="assets/img/logo/logo.png"
@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 
-                <!-- Bouton utilisateur -->
+                <!-- Bouton utilisateur desktop -->
                 <div class="hidden md:block">
                     <div class="ml-4 flex items-center md:ml-6">
                         <div class="relative">
@@ -76,70 +76,124 @@
                     </div>
                 </div>
 
-                <!-- Bouton menu mobile -->
-                <div class="-mr-2 flex md:hidden">
+                <!-- Bouton hamburger mobile - PLUS VISIBLE -->
+                <div class="flex md:hidden ml-auto">
                     <button 
                         @click="mobileMenuOpen = !mobileMenuOpen" 
                         type="button" 
-                        class="inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white transition-colors duration-200"
+                        class="relative inline-flex items-center justify-center p-3 rounded-lg text-white hover:bg-white hover:bg-opacity-10 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                     >
-                        <span class="sr-only">Open main menu</span>
-                        <svg class="h-6 w-6" :class="{ 'hidden': mobileMenuOpen, 'block': !mobileMenuOpen }" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
-                        </svg>
-                        <svg class="h-6 w-6" :class="{ 'block': mobileMenuOpen, 'hidden': !mobileMenuOpen }" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
+                        <span class="sr-only">Ouvrir le menu</span>
+                        <!-- Hamburger icon animé -->
+                        <div class="w-7 h-6 flex flex-col justify-between">
+                            <span 
+                                class="block h-1 w-full bg-white rounded-full transform transition-all duration-300 ease-in-out"
+                                :class="{ 'rotate-45 translate-y-2.5': mobileMenuOpen }"
+                            ></span>
+                            <span 
+                                class="block h-1 w-full bg-white rounded-full transition-all duration-300 ease-in-out"
+                                :class="{ 'opacity-0': mobileMenuOpen }"
+                            ></span>
+                            <span 
+                                class="block h-1 w-full bg-white rounded-full transform transition-all duration-300 ease-in-out"
+                                :class="{ '-rotate-45 -translate-y-2.5': mobileMenuOpen }"
+                            ></span>
+                        </div>
                     </button>
                 </div>
             </div>
         </div>
 
-        <!-- Mobile menu -->
+        <!-- Overlay sombre pour mobile -->
         <transition
-            enter-active-class="transition ease-out duration-200"
-            enter-from-class="transform opacity-0 -translate-y-2"
-            enter-to-class="transform opacity-100 translate-y-0"
-            leave-active-class="transition ease-in duration-150"
-            leave-from-class="transform opacity-100 translate-y-0"
-            leave-to-class="transform opacity-0 -translate-y-2"
+            enter-active-class="transition-opacity ease-linear duration-300"
+            enter-from-class="opacity-0"
+            enter-to-class="opacity-100"
+            leave-active-class="transition-opacity ease-linear duration-300"
+            leave-from-class="opacity-100"
+            leave-to-class="opacity-0"
         >
-            <div v-if="mobileMenuOpen" class="md:hidden">
-                <div class="px-2 pt-2 pb-3 space-y-1">
+            <div 
+                v-if="mobileMenuOpen" 
+                @click="mobileMenuOpen = false"
+                class="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
+            ></div>
+        </transition>
+
+        <!-- Off-canvas menu mobile -->
+        <transition
+            enter-active-class="transition ease-out duration-300"
+            enter-from-class="transform translate-x-full"
+            enter-to-class="transform translate-x-0"
+            leave-active-class="transition ease-in duration-200"
+            leave-from-class="transform translate-x-0"
+            leave-to-class="transform translate-x-full"
+        >
+            <div 
+                v-if="mobileMenuOpen" 
+                class="fixed top-0 right-0 bottom-0 w-80 bg-gray-800 shadow-2xl z-50 md:hidden overflow-y-auto"
+            >
+                <!-- Header du menu off-canvas -->
+                <div class="flex items-center justify-between p-4 border-b border-gray-700">
+                    <div class="flex items-center space-x-3">
+                        <img
+                            class="h-8 w-8"
+                            src="assets/img/logo/logo.png"
+                            alt="Lumilynk logo"
+                        />
+                        <span class="text-white font-semibold text-lg">Menu</span>
+                    </div>
+                    <button 
+                        @click="mobileMenuOpen = false"
+                        class="text-gray-400 hover:text-white hover:bg-gray-700 p-2 rounded-lg transition-colors duration-200"
+                    >
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Profil utilisateur -->
+                <div class="p-4 border-b border-gray-700 bg-gray-750">
+                    <div class="flex items-center space-x-3">
+                        <div class="h-12 w-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-semibold text-base shadow-lg">
+                            {{ userInitials }}
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-sm font-semibold text-white">{{ userName }}</p>
+                            <p class="text-xs text-gray-400 truncate">{{ userEmail }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu items -->
+                <div class="py-4">
                     <router-link 
                         v-for="item in menuItems" 
                         :key="item.path"
                         :to="item.path" 
                         @click="mobileMenuOpen = false"
-                        class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
-                        active-class="bg-gray-600 text-white"
+                        class="flex items-center space-x-3 text-gray-300 hover:bg-gray-700 hover:text-white px-4 py-3 transition-all duration-200 group"
+                        active-class="bg-gray-700 text-white border-l-4 border-blue-500"
                     >
-                        {{ item.label }}
+                        <svg class="h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                        <span class="text-sm font-medium">{{ item.label }}</span>
                     </router-link>
-                    
-                    <!-- User info mobile -->
-                    <div class="border-t border-gray-700 mt-3 pt-3">
-                        <div class="px-3 py-2 mb-2">
-                            <div class="flex items-center space-x-3">
-                                <div class="h-10 w-10 rounded-full bg-gray-600 flex items-center justify-center text-white font-semibold border-2 border-gray-500">
-                                    {{ userInitials }}
-                                </div>
-                                <div>
-                                    <p class="text-sm font-medium text-white">{{ userName }}</p>
-                                    <p class="text-xs text-gray-400">{{ userEmail }}</p>
-                                </div>
-                            </div>
-                        </div>
-                        <button 
-                            @click="logout" 
-                            class="w-full flex items-center space-x-2 text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
-                        >
-                            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-                            </svg>
-                            <span>Déconnexion</span>
-                        </button>
-                    </div>
+                </div>
+
+                <!-- Bouton déconnexion -->
+                <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-gray-700 bg-gray-800">
+                    <button 
+                        @click="logout" 
+                        class="w-full flex items-center justify-center space-x-2 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white px-4 py-3 rounded-lg transition-all duration-200 font-medium shadow-lg hover:shadow-xl transform hover:scale-105"
+                    >
+                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                        </svg>
+                        <span>Déconnexion</span>
+                    </button>
                 </div>
             </div>
         </transition>
@@ -193,3 +247,38 @@ onMounted(() => {
     userEmail.value = user.email || ''
 })
 </script>
+
+<style scoped>
+/* Hamburger icon animation smooth */
+.transform {
+    transform-origin: center;
+}
+
+/* Amélioration du scrollbar */
+.overflow-y-auto::-webkit-scrollbar {
+    width: 6px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-track {
+    background: #374151;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb {
+    background: #6b7280;
+    border-radius: 3px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+}
+
+/* Animation pour le gradient */
+.bg-gradient-to-br {
+    background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+}
+
+/* Effet hover sur les items du menu */
+.group:hover svg {
+    transform: translateX(0.25rem);
+}
+</style>

@@ -9,17 +9,25 @@
 
       <!-- Form section -->
       <div class="w-full lg:w-7/12 p-8 flex flex-col justify-center">
-        <div class="d-flex">
-          <p class="font-bold text-start col-4 text-gray-800 mb-6">
-              <router-link to="/" @click.prevent="reloadAbout('/')">
-                  <i class="fa fa-arrow-left" aria-hidden="true" style="color: var(--theme); font-size: 24px;"></i>
-              </router-link>
-          </p>
-          <h3 id="title-register" class="text-2xl font-bold text-center text-gray-800 mb-6">
+        <!-- Header avec flèche et titre -->
+        <div class="relative mb-6">
+          <!-- Flèche de retour (position absolue) -->
+          <div class="absolute left-0 top-0">
+            <router-link to="/" @click.prevent="reloadAbout('/')">
+              <i class="fa fa-arrow-left" aria-hidden="true" 
+                 style="color: var(--theme); font-size: 20px;"></i>
+            </router-link>
+          </div>
+          
+          <!-- Titre centré -->
+          <h3 id="title-register" class="text-2xl font-bold text-center text-gray-800">
             Rejoignez <span style="color: var(--theme);">LUMILYNK</span>
           </h3>
         </div>
+
+        <!-- Formulaire -->
         <form class="space-y-4" @submit.prevent="handleRegister">
+          <!-- Nom et Date de naissance -->
           <div class="flex flex-col md:flex-row md:space-x-4">
             <div class="w-full">
               <label class="block text-sm font-bold text-gray-700">Nom complet</label>
@@ -34,21 +42,24 @@
               type="date" placeholder="Date de naissance" required />
             </div>
           </div>
+
+          <!-- Email et Téléphone -->
           <div class="flex flex-col md:flex-row md:space-x-4">
             <div class="w-full">
-                <label class="block text-sm font-bold text-gray-700">Adresse Email</label>
-                <input v-model="email"
-                class="w-full px-3 py-2 border rounded text-dark focus:outline-none focus:ring-2 focus:ring-blue-500"
-                type="email" placeholder="email@email.com" required />
+              <label class="block text-sm font-bold text-gray-700">Adresse Email</label>
+              <input v-model="email"
+              class="w-full px-3 py-2 border rounded text-dark focus:outline-none focus:ring-2 focus:ring-blue-500"
+              type="email" placeholder="email@email.com" required />
             </div>
             <div class="w-full">
-                <label class="block text-sm font-bold text-gray-700">Téléphone</label>
-                <input v-model="phone"
-                class="w-full px-3 py-2 border rounded text-dark focus:outline-none focus:ring-2 focus:ring-blue-500"
-                type="text" placeholder="010101010" required />
+              <label class="block text-sm font-bold text-gray-700">Téléphone</label>
+              <input v-model="phone"
+              class="w-full px-3 py-2 border rounded text-dark focus:outline-none focus:ring-2 focus:ring-blue-500"
+              type="text" placeholder="010101010" required />
             </div>
           </div>
 
+          <!-- Mots de passe -->
           <div class="flex flex-col md:flex-row md:space-x-4">
             <div class="w-full">
               <label class="block text-sm font-bold text-gray-700">Mot de passe</label>
@@ -64,13 +75,15 @@
             </div>
           </div>
 
+          <!-- Bouton -->
           <div>
             <button type="submit"
-                    class="w-full bg-blue-600 text-gray-600 border font-bold py-2 px-4 rounded cursor-pointer hover:bg-blue-700 transition">
+                    class="w-full bg-blue-600 text-gray-600 border font-bold py-2 px-4 rounded cursor-box hover:bg-blue-700 transition">
               S'enregistrer
             </button>
           </div>
 
+          <!-- Lien connexion -->
           <div class="text-center text-sm mt-4">
             <p>
               Vous avez déjà un compte ?
@@ -114,7 +127,13 @@ const handleRegister = async () => {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ full_name: full_name.value, email: email.value,password: password.value, phone: phone.value, dateNaissance: dateNaissance.value }),
+        body: JSON.stringify({ 
+            full_name: full_name.value, 
+            email: email.value,
+            password: password.value, 
+            phone: phone.value, 
+            dateNaissance: dateNaissance.value 
+        }),
         })
 
         const data = await response.json()
@@ -154,3 +173,54 @@ const handleRegister = async () => {
     }
 }
 </script>
+
+<style scoped>
+/* Centrage parfait du titre Register */
+#title-register {
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Tablets */
+@media (max-width: 1023px) {
+  #title-register {
+    font-size: 1.5rem !important;
+    padding: 0 1.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  #title-register {
+    font-size: 1.2rem !important;
+    line-height: 1.4;
+    padding: 0 1rem;
+    word-wrap: break-word;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 575px) {
+  #title-register {
+    font-size: 1rem !important;
+    padding: 0 0.5rem;
+  }
+}
+
+/* Very Small Mobile */
+@media (max-width: 399px) {
+  #title-register {
+    font-size: 0.9rem !important;
+    line-height: 1.3;
+  }
+}
+
+/* Espacement des champs en colonne sur mobile */
+@media (max-width: 767px) {
+  .md\:space-x-4 > * + * {
+    margin-left: 0 !important;
+    margin-top: 1rem;
+  }
+}
+</style>

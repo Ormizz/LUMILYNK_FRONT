@@ -162,6 +162,7 @@
                     <button
                       @click="viewStudent(etudiant)"
                       class="text-indigo-600 hover:text-indigo-800 hover:underline"
+                      style="margin-right: 10px;"
                     >
                       Voir
                     </button>
