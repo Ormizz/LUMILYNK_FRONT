@@ -6723,3 +6723,48 @@ input.main-search-input::placeholder {
     left: 100%;
 }
 
+/* ========================================
+   DÉSACTIVER LE CURSEUR PERSONNALISÉ SUR MOBILE
+   ======================================== */
+
+/* Masquer le curseur personnalisé sur les appareils tactiles */
+@media (hover: none) and (pointer: coarse) {
+  /* Cacher les éléments du curseur */
+  .mouse-cursor,
+  .cursor-inner,
+  .cursor-outer {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+  
+  /* Réinitialiser le curseur par défaut */
+  * {
+    cursor: default !important;
+  }
+  
+  /* Réinitialiser les effets cursor-box */
+  .cursor-box::before {
+    display: none !important;
+  }
+}
+
+/* Garder le curseur personnalisé uniquement sur desktop */
+@media (hover: hover) and (pointer: fine) {
+  .mouse-cursor {
+    display: block;
+  }
+}
+
+/* Alternative : Désactiver complètement sur mobile/tablette */
+@media (max-width: 1024px) {
+  .mouse-cursor,
+  .cursor-inner,
+  .cursor-outer {
+    display: none !important;
+  }
+  
+  .cursor-box::before {
+    display: none !important;
+  }
+}
