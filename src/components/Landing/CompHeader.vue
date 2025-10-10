@@ -119,7 +119,7 @@
                     <!-- <a href="contact.html" class="theme-btn w-100">
                         Contactez nous
                     </a> -->
-                    <router-link to="/contact" class="theme-btn w-100">
+                    <router-link to="/contact" @click.prevent="reloadAbout('/contact') " class="theme-btn w-100">
                         Contactez nous
                     </router-link>
                     <div class="social-icon d-flex align-items-center">
