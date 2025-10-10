@@ -127,6 +127,81 @@
             </div>
           </div>
         </div>
+        <!-- Moyens de paiement -->
+          <div class="bg-white rounded-lg shadow-md p-6 border border-indigo-100">
+            <div class="flex items-center mb-4">
+              <svg class="h-6 w-6 text-indigo-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+              <h3 class="text-lg font-semibold text-gray-800">Moyens de paiement disponibles</h3>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <!-- Wave Money -->
+              <div class="bg-white rounded-lg p-4 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                <div class="flex items-center mb-3">
+                  <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center mr-3">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                    </svg>
+                  </div>
+                  <h4 class="text-base font-semibold text-gray-800">Wave</h4>
+                </div>
+                <div class="space-y-2 text-sm">
+                  <div class="flex items-center text-gray-700">
+                    <svg class="w-4 h-4 mr-2 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    <a href="tel:+2250143027199" class="hover:text-blue-600 font-medium">+225 01 43 02 71 99</a>
+                  </div>
+                  <div class="flex items-center text-gray-700">
+                    <svg class="w-4 h-4 mr-2 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    <a href="tel:+2250779324290" class="hover:text-blue-600 font-medium">+225 07 79 32 42 90</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Orange Money -->
+              <div class="bg-white rounded-lg p-4 shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                <div class="flex items-center mb-3">
+                  <div class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center mr-3">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                    </svg>
+                  </div>
+                  <h4 class="text-base font-semibold text-gray-800">Orange Money</h4>
+                </div>
+                <div class="space-y-2 text-sm">
+                  <div class="flex items-center text-gray-700">
+                    <svg class="w-4 h-4 mr-2 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    <a href="tel:+2250143027199" class="hover:text-orange-500 font-medium">+225 01 43 02 71 99</a>
+                  </div>
+                  <div class="flex items-center text-gray-700">
+                    <svg class="w-4 h-4 mr-2 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    <a href="tel:+2250779324290" class="hover:text-orange-500 font-medium">+225 07 79 32 42 90</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Note importante -->
+            <div class="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-lg">
+              <div class="flex items-start">
+                <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <p class="text-xs text-blue-800">
+                  <span class="font-semibold">Important :</span> Après avoir effectué votre paiement, n'oubliez pas d'ajouter la preuve via le bouton "Ajouter un paiement" ci-dessus.
+                </p>
+              </div>
+            </div>
+          </div>
       </main>
     </div>
   </StudentGuard>
@@ -173,3 +248,12 @@ onMounted(() => {
   fetchPayments(user)
 })
 </script>
+
+<style scoped>
+/* Espacement entre le tableau mobile et les moyens de paiement */
+@media (max-width: 767px) {
+  .md\:hidden.space-y-4 {
+    margin-bottom: 2rem;
+  }
+}
+</style>
