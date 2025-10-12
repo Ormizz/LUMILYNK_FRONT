@@ -9,8 +9,8 @@
                     <!-- Flèche de retour (position absolue) -->
                     <div class="absolute left-0 top-0">
                         <router-link to="/" @click.prevent="reloadAbout('/')">
-                            <i class="fa fa-arrow-left" aria-hidden="true" 
-                               style="color: var(--theme); font-size: 20px;"></i>
+                            <i class="fa fa-arrow-left" aria-hidden="true"
+                                style="color: var(--theme); font-size: 20px;"></i>
                         </router-link>
                     </div>
                     

@@ -1489,3 +1489,613 @@ nav a {
   }
 }
 
+/* ========================================
+   OFF-CANVAS NAVBAR - ACTIVATION À PARTIR DE 1199px
+   ======================================== */
+
+/* Masquer le menu desktop à partir de 1199px */
+@media (max-width: 1199px) {
+  /* Cacher le menu desktop */
+  nav .hidden.md\:block {
+    display: none !important;
+  }
+  
+  /* Afficher le bouton hamburger */
+  nav .flex.md\:hidden {
+    display: flex !important;
+  }
+  
+  /* Ajuster le conteneur principal */
+  nav .mx-auto {
+    max-width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  /* Logo */
+  nav .shrink-0 img {
+    height: 2.5rem;
+    width: auto;
+  }
+  
+  /* Header height */
+  nav .flex.h-16 {
+    height: 4rem;
+  }
+  
+  /* Mobile menu button */
+  nav .md\:hidden button {
+    padding: 0.75rem;
+  }
+  
+  /* Off-canvas menu styling */
+  nav .fixed.top-0.right-0 {
+    width: 20rem; /* 320px */
+  }
+  
+  /* Mobile menu items */
+  nav .md\:hidden .space-y-1 a {
+    display: block;
+    width: 100%;
+    padding: 0.875rem 1.25rem;
+    font-size: 1rem;
+  }
+  
+  /* User info section */
+  nav .border-t.border-gray-700 {
+    margin-top: 1rem;
+    padding-top: 1rem;
+  }
+  
+  nav .border-t .h-10.w-10 {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+  
+  nav .border-t p.text-sm {
+    font-size: 0.95rem;
+  }
+  
+  nav .border-t p.text-xs {
+    font-size: 0.85rem;
+  }
+  
+  /* Logout button */
+  nav .border-t button {
+    width: 100%;
+    padding: 0.875rem 1.25rem;
+    font-size: 0.95rem;
+  }
+  
+  /* Badge */
+  nav .border-t span.inline-block {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+  }
+}
+
+/* Ajustements pour tablettes moyennes */
+@media (max-width: 991px) {
+  nav .mx-auto {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  
+  nav .shrink-0 img {
+    height: 2.25rem;
+  }
+  
+  nav .fixed.top-0.right-0 {
+    width: 18rem; /* 288px */
+  }
+}
+
+/* Ajustements pour mobiles */
+@media (max-width: 767px) {
+  nav .mx-auto {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  nav .flex.h-16 {
+    height: 3.5rem;
+  }
+  
+  nav .shrink-0 img {
+    height: 2rem;
+  }
+  
+  nav .fixed.top-0.right-0 {
+    width: 20rem; /* 320px - reprend la largeur standard */
+  }
+  
+  nav .md\:hidden .space-y-1 a {
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+  }
+  
+  nav .border-t button {
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* Ajustements pour petits mobiles */
+@media (max-width: 575px) {
+  nav .mx-auto {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  
+  nav .shrink-0 img {
+    height: 1.875rem;
+  }
+  
+  nav .md\:hidden .space-y-1 a {
+    padding: 0.65rem 0.875rem;
+    font-size: 0.9rem;
+  }
+  
+  nav .border-t .h-10.w-10 {
+    height: 2.25rem;
+    width: 2.25rem;
+  }
+  
+  nav .border-t button {
+    padding: 0.65rem 0.875rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Fix pour l'overflow du menu mobile */
+@media (max-width: 1199px) {
+  nav .md\:hidden {
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+  }
+  
+  nav .md\:hidden .px-2 {
+    padding-bottom: 1.5rem;
+  }
+}
+
+/* Smooth transitions */
+@media (max-width: 1199px) {
+  nav button,
+  nav a {
+    transition: all 0.2s ease-in-out;
+  }
+  
+  /* Active states pour mobile */
+  nav a:active,
+  nav button:active {
+    transform: scale(0.98);
+  }
+}
+
+/* ========================================
+   CENTRAGE PARFAIT DES BOUTONS - TOUTES TAILLES
+   ======================================== */
+
+/* ========================================
+   CROIX FERMETURE OFF-CANVAS (EN HAUT)
+   ======================================== */
+
+nav .fixed.top-0.right-0 button.text-gray-400 {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  flex-shrink: 0;
+}
+
+nav .fixed.top-0.right-0 button.text-gray-400 svg {
+  flex-shrink: 0;
+  margin: 0 !important;
+}
+
+/* Desktop et tablettes large (1200px+) */
+@media (min-width: 1200px) {
+  nav .fixed.top-0.right-0 button.text-gray-400 {
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 0.5rem;
+  }
+  
+  nav .fixed.top-0.right-0 button.text-gray-400 svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+/* Tablettes (768px à 1199px) */
+@media (max-width: 1199px) and (min-width: 768px) {
+  nav .fixed.top-0.right-0 button.text-gray-400 {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+  }
+  
+  nav .fixed.top-0.right-0 button.text-gray-400 svg {
+    width: 1.375rem;
+    height: 1.375rem;
+  }
+}
+
+/* Mobiles (moins de 768px) */
+@media (max-width: 767px) {
+  nav .fixed.top-0.right-0 button.text-gray-400 {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 0.5rem;
+  }
+  
+  nav .fixed.top-0.right-0 button.text-gray-400 svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+/* Petits mobiles (moins de 576px) */
+@media (max-width: 575px) {
+  nav .fixed.top-0.right-0 button.text-gray-400 {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.375rem;
+  }
+  
+  nav .fixed.top-0.right-0 button.text-gray-400 svg {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+}
+
+/* Très petits mobiles (moins de 400px) */
+@media (max-width: 399px) {
+  nav .fixed.top-0.right-0 button.text-gray-400 {
+    width: 1.875rem;
+    height: 1.875rem;
+  }
+  
+  nav .fixed.top-0.right-0 button.text-gray-400 svg {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+/* ========================================
+   CROIX FERMETURE EN BAS À DROITE
+   ======================================== */
+
+nav .fixed.top-0.right-0 .p-4.border-t button.w-9 {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  flex-shrink: 0;
+  border-radius: 0.375rem;
+}
+
+nav .fixed.top-0.right-0 .p-4.border-t button.w-9 svg {
+  flex-shrink: 0;
+  margin: 0 !important;
+}
+
+/* Desktop et tablettes large */
+@media (min-width: 1200px) {
+  nav .fixed.top-0.right-0 .p-4.border-t button.w-9 {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+  }
+  
+  nav .fixed.top-0.right-0 .p-4.border-t button.w-9 svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+/* Tablettes */
+@media (max-width: 1199px) and (min-width: 768px) {
+  nav .fixed.top-0.right-0 .p-4.border-t button.w-9 {
+    width: 2.375rem !important;
+    height: 2.375rem !important;
+  }
+  
+  nav .fixed.top-0.right-0 .p-4.border-t button.w-9 svg {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 767px) {
+  nav .fixed.top-0.right-0 .p-4.border-t button.w-9 {
+    width: 2.25rem !important;
+    height: 2.25rem !important;
+  }
+  
+  nav .fixed.top-0.right-0 .p-4.border-t button.w-9 svg {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+}
+
+/* Petits mobiles */
+@media (max-width: 575px) {
+  nav .fixed.top-0.right-0 .p-4.border-t button.w-9 {
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+  
+  nav .fixed.top-0.right-0 .p-4.border-t button.w-9 svg {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+/* Très petits mobiles */
+@media (max-width: 399px) {
+  nav .fixed.top-0.right-0 .p-4.border-t button.w-9 {
+    width: 1.875rem !important;
+    height: 1.875rem !important;
+  }
+  
+  nav .fixed.top-0.right-0 .p-4.border-t button.w-9 svg {
+    width: 0.9375rem;
+    height: 0.9375rem;
+  }
+}
+
+/* ========================================
+   BOUTON RETOUR EN HAUT
+   ======================================== */
+
+.back-to-top {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  line-height: 1 !important;
+}
+
+.back-to-top i,
+.back-to-top svg {
+  flex-shrink: 0;
+  margin: 0 !important;
+  line-height: 1;
+}
+
+/* Desktop et tablettes large (1200px+) */
+@media (min-width: 1200px) {
+  .back-to-top {
+    width: 3.125rem !important; /* 50px */
+    height: 3.125rem !important;
+    font-size: 1.125rem;
+    right: 1.875rem;
+    bottom: 1.875rem;
+  }
+  
+  .back-to-top i,
+  .back-to-top svg {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+}
+
+/* Tablettes (768px à 1199px) */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .back-to-top {
+    width: 2.875rem !important; /* 46px */
+    height: 2.875rem !important;
+    font-size: 1rem;
+    right: 1.5rem;
+    bottom: 1.5rem;
+  }
+  
+  .back-to-top i,
+  .back-to-top svg {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+/* Mobiles (moins de 768px) */
+@media (max-width: 767px) {
+  .back-to-top {
+    width: 2.5rem !important; /* 40px */
+    height: 2.5rem !important;
+    font-size: 0.9375rem;
+    right: 1.25rem;
+    bottom: 1.25rem;
+  }
+  
+  .back-to-top i,
+  .back-to-top svg {
+    width: 0.9375rem;
+    height: 0.9375rem;
+  }
+}
+
+/* Petits mobiles (moins de 576px) */
+@media (max-width: 575px) {
+  .back-to-top {
+    width: 2.25rem !important; /* 36px */
+    height: 2.25rem !important;
+    font-size: 0.875rem;
+    right: 1rem;
+    bottom: 1rem;
+  }
+  
+  .back-to-top i,
+  .back-to-top svg {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+}
+
+/* Très petits mobiles (moins de 400px) */
+@media (max-width: 399px) {
+  .back-to-top {
+    width: 2rem !important; /* 32px */
+    height: 2rem !important;
+    font-size: 0.8125rem;
+    right: 0.75rem;
+    bottom: 0.75rem;
+  }
+  
+  .back-to-top i,
+  .back-to-top svg {
+    width: 0.8125rem;
+    height: 0.8125rem;
+  }
+}
+
+/* ========================================
+   BOUTON HAMBURGER (MENU MOBILE)
+   ======================================== */
+
+nav .md\:hidden button {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0.5rem !important;
+}
+
+nav .md\:hidden button > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Desktop et tablettes large */
+@media (min-width: 1200px) {
+  nav .md\:hidden button {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+  
+  nav .md\:hidden button > div {
+    width: 1.5rem;
+    height: 1.25rem;
+  }
+  
+  nav .md\:hidden button > div span {
+    height: 0.125rem;
+  }
+}
+
+/* Tablettes */
+@media (max-width: 1199px) and (min-width: 768px) {
+  nav .md\:hidden button {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  nav .md\:hidden button > div {
+    width: 1.375rem;
+    height: 1.125rem;
+  }
+  
+  nav .md\:hidden button > div span {
+    height: 0.125rem;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 767px) {
+  nav .md\:hidden button {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+  
+  nav .md\:hidden button > div {
+    width: 1.25rem;
+    height: 1rem;
+  }
+  
+  nav .md\:hidden button > div span {
+    height: 0.125rem;
+  }
+}
+
+/* Petits mobiles */
+@media (max-width: 575px) {
+  nav .md\:hidden button {
+    width: 2rem;
+    height: 2rem;
+  }
+  
+  nav .md\:hidden button > div {
+    width: 1.125rem;
+    height: 0.9375rem;
+  }
+  
+  nav .md\:hidden button > div span {
+    height: 0.09375rem;
+  }
+}
+
+/* Très petits mobiles */
+@media (max-width: 399px) {
+  nav .md\:hidden button {
+    width: 1.875rem;
+    height: 1.875rem;
+  }
+  
+  nav .md\:hidden button > div {
+    width: 1rem;
+    height: 0.875rem;
+  }
+}
+
+/* ========================================
+   AMÉLIORATION DU FEEDBACK TACTILE
+   ======================================== */
+
+/* Zone tactile étendue invisible */
+@media (max-width: 767px) {
+  .back-to-top::before {
+    content: '';
+    position: absolute;
+    top: -0.625rem;
+    left: -0.625rem;
+    right: -0.625rem;
+    bottom: -0.625rem;
+    border-radius: 50%;
+  }
+}
+
+/* Animation au touch */
+@media (hover: none) and (pointer: coarse) {
+  nav button:active,
+  .back-to-top:active {
+    transform: scale(0.92);
+    transition: transform 0.1s ease;
+  }
+}
+
+/* Shadow pour meilleure visibilité du back-to-top */
+.back-to-top {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.back-to-top:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.back-to-top:active {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Support des encoches iPhone */
+@supports (padding: max(0px)) {
+  @media (max-width: 767px) {
+    .back-to-top {
+      right: max(1rem, env(safe-area-inset-right)) !important;
+      bottom: max(1rem, env(safe-area-inset-bottom)) !important;
+    }
+  }
+}
